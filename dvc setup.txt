@@ -10,7 +10,12 @@
 #pip install dvc dvc-s3
 #dvc init 
 #dvc add s3data
-#git add s3data.dvc .gitignore  #this makes sure git doesnt upload the data stored here
+#git add s3data/ .gitignore  #this makes sure git doesnt upload the data stored here
 #dvc remote add -d s3remote s3://mycensusinferencestorage #tracks the file here
+#dvc commit s3data/ #this is to update the repository
 #dvc push #to push/update the data
+
 #dvc pull #to retrieve the data from the remote source
+	
+#url to my python env
+#S:\MyProjects\My Projects\35 ML Cloud Inference API>"S:\MyProjects\My Projects\35 ML Cloud Inference API\localenv\Scripts\activate.bat"
