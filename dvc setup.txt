@@ -1,0 +1,16 @@
+#install aws cli
+#create an s3 bucket #mycensusinferencestorage
+#setup iam user and grant s3fullacces and iamfullaccess
+#login to user 
+#go to security credentials and generate access key and secret key
+#run "aws configure" and paste access and secret key here
+#aws s3 ls #list view of existing s3 buckets
+
+#setup dvc
+#pip install dvc dvc-s3
+#dvc init 
+#dvc add s3data
+#git add s3data.dvc .gitignore  #this makes sure git doesnt upload the data stored here
+#dvc remote add -d s3remote s3://mycensusinferencestorage #tracks the file here
+#dvc push #to push/update the data
+#dvc pull #to retrieve the data from the remote source
