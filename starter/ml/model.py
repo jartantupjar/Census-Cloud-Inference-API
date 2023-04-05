@@ -56,6 +56,10 @@ def compute_model_metrics_on_slices(
         save_path: str = None):
     """
     calculate metrics without needing to run inference again
+    category: the column of the dataframe to explore
+    data: the dataframe to query
+    y_data: the true labels
+    y_pred: the predicted labels
     """
     assert y_data.shape[0] == y_pred.shape[0] == data.shape[0]
     slice_results = []
@@ -76,8 +80,7 @@ def compute_model_metrics_on_slices(
             'fbeta'])
 
     if save_path:
-        with open(save_path, 'w') as outfile:
-            slice_metrics_df.to_string(outfile)
+        slice_metrics_df.to_string(open(save_path, 'w'))
     return slice_metrics_df
 
 

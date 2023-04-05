@@ -1,8 +1,8 @@
       column             slice  precision    recall     fbeta
-0  workclass           Private   0.731221  0.619284  0.670614
-1  workclass         Local-gov   0.718182  0.663866  0.689956
-2  workclass         State-gov   0.676471  0.730159  0.702290
-3  workclass  Self-emp-not-inc   0.776699  0.547945  0.642570
-4  workclass      Self-emp-inc   0.746032  0.783333  0.764228
-5  workclass       Federal-gov   0.729412  0.815789  0.770186
+0  workclass           Private   0.830556  0.594433  0.692932
+1  workclass         Local-gov   0.754717  0.672269  0.711111
+2  workclass         State-gov   0.716418  0.761905  0.738462
+3  workclass  Self-emp-not-inc   0.790909  0.595890  0.679688
+4  workclass      Self-emp-inc   0.788136  0.775000  0.781513
+5  workclass       Federal-gov   0.768116  0.697368  0.731034
 6  workclass       Without-pay   1.000000  1.000000  1.000000
