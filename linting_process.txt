@@ -1,0 +1,4 @@
+#run the following to clean python files
+autopep8 --in-place --aggressive --aggressive script_name.py
+#ignore files that do not contain .py or are just dependencies
+flake8 --exclude=.git,__pycache__,build,dist,localenv,data,model,screenshots --max-line-length=127 --statistics   

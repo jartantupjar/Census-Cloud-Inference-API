@@ -1,8 +1,10 @@
 from sklearn.metrics import fbeta_score, precision_score, recall_score
-from sklearn.ensemble import GradientBoostingClassifier,RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 import pandas as pd
 import numpy as np
 # Optional: implement hyperparameter tuning.
+
+
 def train_model(X_train, y_train):
     """
     Trains a machine learning model and returns it.
@@ -19,9 +21,10 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
 
-    model=GradientBoostingClassifier(random_state=42)
-    model.fit(X_train,y_train)
+    model = GradientBoostingClassifier(random_state=42)
+    model.fit(X_train, y_train)
     return model
+
 
 def compute_model_metrics(y, preds):
     """
@@ -44,26 +47,39 @@ def compute_model_metrics(y, preds):
     recall = recall_score(y, preds, zero_division=1)
     return precision, recall, fbeta
 
-def compute_model_metrics_on_slices(category:str,data:pd.DataFrame,y_data:np.array,y_pred:np.array,save_path:str=None):
+
+def compute_model_metrics_on_slices(
+        category: str,
+        data: pd.DataFrame,
+        y_data: np.array,
+        y_pred: np.array,
+        save_path: str = None):
     """
     calculate metrics without needing to run inference again
     """
-    assert y_data.shape[0]==y_pred.shape[0]==data.shape[0]
-    slice_results=[]
+    assert y_data.shape[0] == y_pred.shape[0] == data.shape[0]
+    slice_results = []
     for value in data[category].unique().tolist():
-        mask=data[category]==value
-        filt_y= y_data[mask]
-        filt_y_pred= y_pred[mask]
-        results=compute_model_metrics(filt_y,filt_y_pred)
-        slice_results.append([category,value,*results])
-        
-    slice_metrics_df=pd.DataFrame(slice_results,columns=['column','slice','precision','recall','fbeta'])
-    
+        mask = data[category] == value
+        filt_y = y_data[mask]
+        filt_y_pred = y_pred[mask]
+        results = compute_model_metrics(filt_y, filt_y_pred)
+        slice_results.append([category, value, *results])
+
+    slice_metrics_df = pd.DataFrame(
+        slice_results,
+        columns=[
+            'column',
+            'slice',
+            'precision',
+            'recall',
+            'fbeta'])
+
     if save_path:
-        with open(save_path,'w') as outfile:
+        with open(save_path, 'w') as outfile:
             slice_metrics_df.to_string(outfile)
     return slice_metrics_df
-    
+
 
 def inference(model, X):
     """ Run model inferences and return the predictions.
