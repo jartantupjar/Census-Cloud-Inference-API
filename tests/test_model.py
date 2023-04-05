@@ -1,3 +1,5 @@
+import sys
+sys.path.append('./')
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 from sklearn.base import MultiOutputMixin, ClassifierMixin, BaseEstimator
 from starter.ml import model as mlutils
@@ -5,8 +7,6 @@ from starter.ml import data as datautils
 import pandas as pd
 import numpy as np
 import pytest
-import sys
-sys.path.append('./')
 np.random.seed(42)
 
 

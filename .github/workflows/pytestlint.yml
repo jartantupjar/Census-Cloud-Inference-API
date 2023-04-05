@@ -21,6 +21,6 @@ jobs:
         pip install flake8 pytest 
     - name: Flake8 linting
       run: |
-        flake8 --exclude=.git,__pycache__,build,dist,localenv,data,model,screenshots --max-line-length=127 --statistics
+        flake8 --exclude=.git,__pycache__,build,dist,localenv,data,model,screenshots --ignore E402,W504 --max-line-length=127 --statistics
     - name: Run tests with pytest
       run: pytest
