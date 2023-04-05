@@ -18,4 +18,9 @@
 #dvc pull #to retrieve the data from the remote source
 	
 #url to my python env
-#S:\MyProjects\My Projects\35 ML Cloud Inference API>"S:\MyProjects\My Projects\35 ML Cloud Inference API\localenv\Scripts\activate.bat"
+#using activate.bat
+#"S:\MyProjects\My Projects\35 ML Cloud Inference API\localenv\Scripts\activate.bat"
+#using activate.ps1
+#Set-ExecutionPolicy Unrestricted -Force # this in admin powershell 
+#S:\MyProjects\My Projects\35 ML Cloud Inference API\localenv
+#localenv\Scripts\activate.ps1
