@@ -8,8 +8,8 @@ import pickle
 
 # initialize values
 path = 'data/census_cleaned.csv'
-encoders_path='model/encoders.pkl'
-model_path='model/model.pkl'
+encoders_path = 'model/encoders.pkl'
+model_path = 'model/model.pkl'
 
 slice_output_path = "slice_output.txt"
 category_to_slice = 'education'
@@ -39,12 +39,12 @@ X_train, y_train, encoder, lb = datautils.process_data(
     train, categorical_features=cat_features, label="salary", training=True
 )
 # save encoders
-pickle.dump([encoder,lb], open(encoders_path, 'wb'))
+pickle.dump([encoder, lb], open(encoders_path, 'wb'))
 
 # Process the test data with the process_data function.
 X_test, y_test, _, _ = datautils.process_data(
     test, cat_features, "salary", training=False, encoder=encoder, lb=lb)
-    
+
 # Train and save the model.
 model = mlutils.train_model(X_train, y_train)
 pickle.dump(model, open(model_path, 'wb'))
