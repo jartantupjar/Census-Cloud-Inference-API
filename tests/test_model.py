@@ -12,7 +12,11 @@ np.random.seed(42)
 
 @pytest.fixture
 def model_data():
-    # generate dummy data
+    """
+    generates dummy "processed" data for the ff:
+    dummy X features as np.array
+    dummy y as np.array
+    """
     X = np.random.rand(100, 10)
     y = np.random.randint(2, size=100)
     return X, y
@@ -20,7 +24,12 @@ def model_data():
 
 @pytest.fixture
 def dataframe_data():
-    # generate dummy data
+    """
+    generates dummy "raw" data for the ff:
+    dummy dataframe
+    category: category feature/column
+    target: the predictor
+    """
     category = 'feature1'
     target = 'target'
     data = pd.DataFrame({
