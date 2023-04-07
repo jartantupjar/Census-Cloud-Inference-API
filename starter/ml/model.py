@@ -2,9 +2,15 @@ from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import GradientBoostingClassifier
 import pandas as pd
 import numpy as np
+import pickle
 # Optional: implement hyperparameter tuning.
 
-
+def load_model(model_path:str):
+    return pickle.load(open(model_path, 'rb'))
+    
+def load_encoders(encoders_path:str):
+    return pickle.load(open(encoders_path, 'rb'))
+    
 def train_model(X_train, y_train):
     """
     Trains a machine learning model and returns it.

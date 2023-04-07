@@ -1,0 +1,79 @@
+age:
+  description: "range 0-100"
+  ge: 1
+  le: 100
+  example: 39
+  
+workclass:
+  description: "'State-gov', 'Self-emp-not-inc', 'Private', 'Federal-gov', 'Local-gov','Self-emp-inc', 'Without-pay', 'Never-worked'"
+  example: 'State-gov'
+  regex: "^(State-gov|Self-emp-not-inc|Private|Federal-gov|Local-gov|Self-emp-inc|Without-pay|Never-worked)$"
+
+fnlgt:
+  description: "range 0-1500000"
+  ge: 0
+  le: 1500000
+  example: 77516 
+
+education:
+  description: "'Bachelors', 'HS-grad', '11th', 'Masters', '9th', 'Some-college', 'Assoc-acdm', 'Assoc-voc', '7th-8th', 'Doctorate', 'Prof-school', '5th-6th', '10th', '1st-4th', 'Preschool', '12th'"
+  example: 'Bachelors'
+  regex: "^(Bachelors|HS-grad|11th|Masters|9th|Some-college|Assoc-acdm|Assoc-voc|7th-8th|Doctorate|Prof-school|5th-6th|10th|1st-4th|Preschool|12th)$"
+
+education_num:
+  description: "range 1-16"
+  ge: 1
+  le: 16
+  example: 13
+  alias: "education-num"
+
+marital_status:
+  description: "'Never-married', 'Married-civ-spouse', 'Divorced', 'Married-spouse-absent', 'Separated', 'Married-AF-spouse', 'Widowed'"
+  example: 'Never-married'
+  regex: "^(Never-married|Married-civ-spouse|Divorced|Married-spouse-absent|Separated|Married-AF-spouse|Widowed)$"
+  alias: "marital-status" #alias is required if the json key cannot be interpreted by python functions (in this case "-" is not allowed in python but is being passed into the api)
+occupation:
+  description: "'Adm-clerical', 'Exec-managerial', 'Handlers-cleaners', 'Prof-specialty', 'Other-service', 'Sales', 'Craft-repair', 'Transport-moving', 'Farming-fishing', 'Machine-op-inspct', 'Tech-support', 'Protective-serv', 'Armed-Forces', 'Priv-house-serv'"
+  example: 'Adm-clerical'
+  regex: "^(Adm-clerical|Exec-managerial|Handlers-cleaners|Prof-specialty|Other-service|Sales|Craft-repair|Transport-moving|Farming-fishing|Machine-op-inspct|Tech-support|Protective-serv|Armed-Forces|Priv-house-serv)$"
+
+relationship:
+  description: "'Not-in-family', 'Husband', 'Wife', 'Own-child', 'Unmarried', 'Other-relative'"
+  example: 'Not-in-family'
+  regex: "^(Not-in-family|Husband|Wife|Own-child|Unmarried|Other-relative)$$"
+
+race:
+  description: "'White', 'Black', 'Asian-Pac-Islander', 'Amer-Indian-Eskimo', 'Other'"
+  example: 'White'
+  regex: "^(White|Black|Asian-Pac-Islander|Amer-Indian-Eskimo|Other)$"
+
+sex:
+  description: "'Male', 'Female'"
+  example: 'Male'
+  regex: "^(Male|Female)$"
+
+capital_gain:
+  description: "range 0-99999"
+  ge: 0
+  le: 99999
+  example: 2174
+  alias: "capital-gain"
+
+capital_loss:
+  description: "range 0-5000"
+  ge: 0
+  le: 5000
+  example: 0
+  alias: "capital-loss"
+hours_per_week:
+  description: "range 1-112"
+  ge: 1
+  le: 112
+  example: 40
+  alias: "hours-per-week"
+
+native_country:
+  description: "'United-States', 'Cuba', 'Jamaica', 'India', 'Mexico', 'South', 'Puerto-Rico', 'Honduras', 'England', 'Canada', 'Germany', 'Iran', 'Philippines', 'Italy', 'Poland', 'Columbia', 'Cambodia', 'Thailand', 'Ecuador', 'Laos', 'Taiwan', 'Haiti', 'Portugal', 'Dominican-Republic', 'El-Salvador', 'France', 'Guatemala', 'China', 'Japan', 'Yugoslavia', 'Peru', 'Outlying-US(Guam-USVI-etc)', 'Scotland', 'Trinadad&Tobago', 'Greece', 'Nicaragua', 'Vietnam', 'Hong', 'Ireland', 'Hungary', 'Holand-Netherlands'"
+  example: 'United-States'
+  regex: "^(United-States|Cuba|Jamaica|India|Mexico|South|Puerto-Rico|Honduras|England|Canada|Germany|Iran|Philippines|Italy|Poland|Columbia|Cambodia|Thailand|Ecuador|Laos|Taiwan|Haiti|Portugal|Dominican-Republic|El-Salvador|France|Guatemala|China|Japan|Yugoslavia|Peru|Outlying-US(Guam-USVI-etc)|Scotland|Trinadad&Tobago|Greece|Nicaragua|Vietnam|Hong|Ireland|Hungary|Holand-Netherlands)$"
+  alias: "native-country"

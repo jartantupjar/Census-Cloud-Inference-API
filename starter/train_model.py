@@ -18,8 +18,8 @@ data = pd.read_csv(path)
 
 # additional preprocessing because '?' adds an uncessary amount of
 # uncertainty to the model:
-data = data.replace('?', np.nan)
-data = data.dropna()
+data=datautils.preprocess_data(data)
+
 
 # Optional enhancement, use K-fold cross validation instead of a
 # train-test split.

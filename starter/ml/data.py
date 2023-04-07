@@ -1,5 +1,16 @@
 import numpy as np
+import pandas as pd
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
+
+def preprocess_data(data:pd.DataFrame):
+    """
+    Preprocessing step for the data.
+    this replaces blanks '?' with nulls and removes all nuns
+    Returns: Cleaned DataFrame  
+    """
+    data = data.replace('?', np.nan)
+    data = data.dropna()
+    return data
 
 
 def process_data(
