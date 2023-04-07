@@ -1,9 +1,8 @@
-# Script to train machine learning model.
+# Script to train machine learning model
 from ml import data as datautils
 from ml import model as mlutils
 from sklearn.model_selection import train_test_split
 import pandas as pd
-import numpy as np
 import pickle
 
 # initialize values
@@ -18,8 +17,7 @@ data = pd.read_csv(path)
 
 # additional preprocessing because '?' adds an uncessary amount of
 # uncertainty to the model:
-data=datautils.preprocess_data(data)
-
+data = datautils.preprocess_data(data)
 
 # Optional enhancement, use K-fold cross validation instead of a
 # train-test split.

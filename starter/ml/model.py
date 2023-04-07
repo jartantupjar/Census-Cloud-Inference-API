@@ -5,12 +5,23 @@ import numpy as np
 import pickle
 # Optional: implement hyperparameter tuning.
 
-def load_model(model_path:str):
+
+def load_model(model_path: str):
+    """
+    gets current path and outputs the model
+        that was saved in a pickle file
+    """
     return pickle.load(open(model_path, 'rb'))
-    
-def load_encoders(encoders_path:str):
+
+
+def load_encoders(encoders_path: str):
+    """
+    gets current path and outputs the encoders
+        that were saved in a pickle file
+    """
     return pickle.load(open(encoders_path, 'rb'))
-    
+
+
 def train_model(X_train, y_train):
     """
     Trains a machine learning model and returns it.
