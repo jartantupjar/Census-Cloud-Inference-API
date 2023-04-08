@@ -5,9 +5,12 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 import pickle
 import logging
-#setup results logger
-logging.basicConfig(filename='model/train_results.log',level=logging.INFO, 
-    format='%(asctime)s |%(name)s | %(message)s',encoding=None)
+# setup results logger
+logging.basicConfig(
+    filename='model/train_results.log',
+    level=logging.INFO,
+    format='%(asctime)s |%(name)s | %(message)s',
+    encoding=None)
 logger = logging.getLogger('train_results')
 
 # initialize values
