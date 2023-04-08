@@ -2,6 +2,7 @@ import sys
 sys.path.append('./')
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 from sklearn.base import MultiOutputMixin, ClassifierMixin, BaseEstimator
+from sklearn.exceptions import NotFittedError
 from starter.ml import model as mlutils
 from starter.ml import data as datautils
 import pandas as pd
@@ -51,6 +52,12 @@ def test_model_type(model_data):
     assert isinstance(model, BaseEstimator)\
         or isinstance(model, ClassifierMixin)\
         or isinstance(model, MultiOutputMixin)
+
+    # check if model is fitting
+    try:
+        model.predict(X)
+    except NotFittedError as e:
+        print(repr(e))
 
 
 def test_compute_model_metrics_on_slices(dataframe_data):

@@ -30,8 +30,6 @@ CATEGORICAL_FEATURES = [
 
 class InputData(BaseModel):
     age: Annotated[int, Field(**DATA_FORMAT["age"])]
-    # age: int= Field(**DATA_FORMAT["age"])
-    # workclass:str=Field(**DATA_FORMAT["workclass"])
     workclass: Annotated[str, Field(**DATA_FORMAT["workclass"])]
     fnlgt: Annotated[int, Field(**DATA_FORMAT["fnlgt"])]
     education: Annotated[str, Field(**DATA_FORMAT["education"])]
