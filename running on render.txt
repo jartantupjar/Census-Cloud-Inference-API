@@ -1,0 +1,10 @@
+#create account
+#click on create webservice
+#connect to github (may require going to github and allowing render to access the specific repository you want")
+#select repository and click on next
+#in render click on Environment > add environment variable PYTHON_VERSION to 3.9.12 #or else it will run render's default python version
+#set app name (this will also work as the apps url) in my case uvicorn main:app --host 0.0.0.0 --port 10000
+#in Build Command add pip install -r requirements.txt
+#in Start Command add uvicorn main:app --host 0.0.0.0 --port 10000
+#then render will take 5-10 minutes to build
+#when service is live wait 5-10 minutes for the website url to load
