@@ -4,6 +4,11 @@ from ml import model as mlutils
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import pickle
+import logging
+#setup results logger
+logging.basicConfig(filename='model/train_results.log',level=logging.INFO, 
+    format='%(asctime)s |%(name)s | %(message)s',encoding=None)
+logger = logging.getLogger('train_results')
 
 # initialize values
 path = 'data/census_cleaned.csv'
@@ -50,11 +55,13 @@ pickle.dump(model, open(model_path, 'wb'))
 # run inference on train
 y_train_pred = mlutils.inference(model, X_train)
 train_results = mlutils.compute_model_metrics(y_train, y_train_pred)
-
+logger.info("training results")
+logger.info(train_results)
 # run inference on test
 y_test_pred = mlutils.inference(model, X_test)
 test_results = mlutils.compute_model_metrics(y_test, y_test_pred)
-
+logger.info("test results")
+logger.info(test_results)
 # Process the test data with the process_data function.
 X_test, y_test, _, _ = datautils.process_data(
     test, cat_features, "salary", training=False, encoder=encoder, lb=lb)
